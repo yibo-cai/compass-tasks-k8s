@@ -1,5 +1,4 @@
-FROM huangxiangyu/compass-tasks:v0.3
-#FROM localbuild/compass-tasks
+FROM linaro/compass-tasks:latest
 
 ADD ./run.sh /root/
 RUN chmod +x /root/run.sh
