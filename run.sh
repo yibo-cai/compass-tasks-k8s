@@ -16,6 +16,8 @@ git clone https://github.com/kubernetes-incubator/kubespray.git /opt/kargo_k8s
 cd /opt/kargo_k8s
 git checkout v2.2.0
 
+git apply /root/arm64.patch
+
 pip uninstall  ansible -y
 
 pip install ansible==2.3.1.0
