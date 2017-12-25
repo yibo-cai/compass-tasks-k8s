@@ -22,6 +22,6 @@ pip uninstall  ansible -y
 
 pip install ansible==2.3.1.0
 
-
-
-
+# create /opt/compass/bin/switch_virtualenv.py
+mkdir -p /opt/compass/bin
+touch /opt/compass/bin/switch_virtualenv.py
