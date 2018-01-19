@@ -14,9 +14,12 @@ rm -rf  /opt/kargo_k8s
 git clone https://github.com/kubernetes-incubator/kubespray.git /opt/kargo_k8s
 
 cd /opt/kargo_k8s
-git checkout v2.2.0
+git checkout v2.2.1
 
-git apply /root/arm64.patch
+# bugfix: https://github.com/kubernetes-incubator/kubespray/pull/1727
+git format-patch -1 dae9f6d3 --stdout | git apply
+# support etcd on arm64
+git apply /root/etcd-arm64.patch
 
 pip uninstall  ansible -y
 
