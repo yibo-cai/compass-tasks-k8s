@@ -7,7 +7,7 @@
 # which accompanies this distribution, and is available at
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
-set -x
+set -ex
 COMPASS_DIR=${BASH_SOURCE[0]%/*}
 
 rm -rf  /opt/kargo_k8s
@@ -20,6 +20,8 @@ git checkout v2.2.1
 git format-patch -1 dae9f6d3 --stdout | git apply
 # support etcd on arm64
 git apply /root/etcd-arm64.patch
+# thunderx is way too slow...
+git apply /root/thunderx1.patch
 
 pip uninstall  ansible -y
 
