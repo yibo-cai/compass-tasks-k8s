@@ -22,6 +22,8 @@ git format-patch -1 dae9f6d3 --stdout | git apply
 git apply /root/etcd-arm64.patch
 # thunderx is way too slow...
 git apply /root/thunderx1.patch
+# fix docker package
+git apply /root/docker-pkg.patch
 
 pip uninstall  ansible -y
 
